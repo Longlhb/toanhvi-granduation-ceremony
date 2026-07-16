@@ -409,3 +409,85 @@ body {
         transform: translateY(-10px);
     }
 }
+.guestbook {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 30px;
+}
+
+.guestbook h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2f7f85;
+}
+
+#wishForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#wishForm input,
+#wishForm textarea {
+    padding: 15px;
+    border: 2px solid #bce7e4;
+    border-radius: 12px;
+    font-size: 1.6rem;
+    font-family: inherit;
+}
+
+#wishForm textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+#wishForm button {
+    width: 220px;
+    margin: auto;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 999px;
+
+    background: #79d7d1;
+
+    color: #fff;
+
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#wishForm button:hover {
+    background: #5ec5be;
+}
+
+#wishList {
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.wish-item {
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: #f6ffff;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.wish-item strong {
+    color: #2f7f85;
+    font-size: 1.8rem;
+}
+
+.wish-item p {
+    margin-top: 8px;
+    font-size: 1.6rem;
+}

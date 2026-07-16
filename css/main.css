@@ -156,7 +156,9 @@ body {
     text-align: center;
 }
 
-.letter-container h2 {
+.letter-container h2,
+.map-section h2,
+.countdown-section h2 {
     font-size: 5rem;
 
     font-family: "Cormorant Garamond", serif;
@@ -164,7 +166,8 @@ body {
     color: var(--heading);
 }
 
-.letter-container p {
+.letter-container p,
+.map-section p {
     margin-top: 2rem;
 
     line-height: 1.8;
@@ -173,7 +176,7 @@ body {
 .letter-container h3 {
     margin-top: 4rem;
 
-    font-size: 4rem;
+    font-size: 6rem;
 
     color: var(--primary);
 
@@ -230,6 +233,10 @@ body {
     text-align: center;
 }
 
+.map-section h2 {
+    margin-bottom: 2rem;
+}
+
 .map-section iframe {
     width: 100%;
 
@@ -272,4 +279,133 @@ body {
 
 .menu-section a:hover {
     transform: translateY(-3px);
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer {
+    background: #f8f4ee;
+    padding: 70px 20px;
+    margin-top: 80px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 4rem;
+    color: var(--heading);
+    margin-bottom: 40px;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-item {
+    min-width: 250px;
+}
+
+.footer-item h3 {
+    font-size: 2.3rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.footer-item p {
+    font-size: 1.8rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.footer-text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.9rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+.footer-name {
+    margin-top: 35px;
+    font-family: "Great Vibes", cursive;
+    font-size: 4.2rem;
+    color: var(--primary);
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 60px 25px;
+    }
+
+    .footer h2 {
+        font-size: 3rem;
+    }
+
+    .footer-info {
+        gap: 35px;
+    }
+
+    .footer-item h3 {
+        font-size: 2rem;
+    }
+
+    .footer-item p,
+    .footer-text {
+        font-size: 1.6rem;
+    }
+
+    .footer-name {
+        font-size: 3.5rem;
+    }
+}
+/* ==========================
+   PAGE TRANSITION
+========================== */
+
+body {
+    opacity: 0;
+    animation: pageFadeIn 0.5s ease forwards;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-exit {
+    animation: pageFadeOut 0.3s ease forwards;
+
+    pointer-events: none;
+}
+
+@keyframes pageFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
 }

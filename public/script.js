@@ -1,203 +1,203 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Theme toggle functionality
-  const themeToggle = document.getElementById("themeToggle");
-  const html = document.documentElement;
-  const icon = themeToggle.querySelector("i");
+    // Theme toggle functionality
+    const themeToggle = document.getElementById("themeToggle");
+    const html = document.documentElement;
+    const icon = themeToggle.querySelector("i");
 
-  // Check for saved theme preference or prefer-color-scheme
-  const savedTheme = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    // Check for saved theme preference or prefer-color-scheme
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-  // Apply theme based on saved preference or system preference
-  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-    html.classList.add("dark");
-    icon.classList.replace("fa-moon", "fa-sun");
-    document.querySelector('meta[name="theme-color"]').setAttribute("content", "#000000");
-  }
-
-  // Toggle theme when button is clicked
-  themeToggle.addEventListener("click", function () {
-    html.classList.toggle("dark");
-
-    // Update the icon
-    if (html.classList.contains("dark")) {
-      icon.classList.replace("fa-moon", "fa-sun");
-      localStorage.setItem("theme", "dark");
-      document.querySelector('meta[name="theme-color"]').setAttribute("content", "#000000");
-    } else {
-      icon.classList.replace("fa-sun", "fa-moon");
-      localStorage.setItem("theme", "light");
-      document.querySelector('meta[name="theme-color"]').setAttribute("content", "#0070f3");
+    // Apply theme based on saved preference or system preference
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        html.classList.add("dark");
+        icon.classList.replace("fa-moon", "fa-sun");
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#000000");
     }
-  });
 
-  // Mobile navigation toggle
-  const menuToggle = document.getElementById("menuToggle");
-  const closeMenu = document.getElementById("closeMenu");
-  const mobileMenu = document.getElementById("mobileMenu");
+    // Toggle theme when button is clicked
+    themeToggle.addEventListener("click", function () {
+        html.classList.toggle("dark");
 
-  if (menuToggle && closeMenu && mobileMenu) {
-    menuToggle.addEventListener("click", function () {
-      mobileMenu.classList.remove("translate-x-full");
-      document.body.classList.add("overflow-hidden");
+        // Update the icon
+        if (html.classList.contains("dark")) {
+            icon.classList.replace("fa-moon", "fa-sun");
+            localStorage.setItem("theme", "dark");
+            document.querySelector('meta[name="theme-color"]').setAttribute("content", "#000000");
+        } else {
+            icon.classList.replace("fa-sun", "fa-moon");
+            localStorage.setItem("theme", "light");
+            document.querySelector('meta[name="theme-color"]').setAttribute("content", "#0070f3");
+        }
     });
 
-    closeMenu.addEventListener("click", function () {
-      mobileMenu.classList.add("translate-x-full");
-      document.body.classList.remove("overflow-hidden");
-    });
+    // Mobile navigation toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const closeMenu = document.getElementById("closeMenu");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-    // Close mobile menu when clicking on a link
-    const mobileLinks = mobileMenu.querySelectorAll("a");
-    mobileLinks.forEach((link) => {
-      link.addEventListener("click", function () {
-        mobileMenu.classList.add("translate-x-full");
-        document.body.classList.remove("overflow-hidden");
-      });
-    });
-  }
-
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute("href");
-      const targetElement = document.querySelector(targetId);
-
-      if (targetElement) {
-        const headerHeight = document.querySelector("header").offsetHeight;
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth",
+    if (menuToggle && closeMenu && mobileMenu) {
+        menuToggle.addEventListener("click", function () {
+            mobileMenu.classList.remove("translate-x-full");
+            document.body.classList.add("overflow-hidden");
         });
-      }
-    });
-  });
 
-  // Form submission handling
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+        closeMenu.addEventListener("click", function () {
+            mobileMenu.classList.add("translate-x-full");
+            document.body.classList.remove("overflow-hidden");
+        });
 
-      // Get form values
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
-
-      // Here you would typically send the data to a server
-      // For demo purposs, we'll just log it and show a success message
-      console.log("Form Submitted:", { name, email, message });
-
-      // Show success message
-      const button = contactForm.querySelector('button[type="submit"]');
-      const originalText = button.textContent;
-      button.textContent = "Message Sent!";
-
-      // Reset form
-      contactForm.reset();
-
-      // Restore button text after a delay
-      setTimeout(() => {
-        button.textContent = originalText;
-      }, 3000);
-    });
-  }
-
-  // Add scroll events for header shadow and reveal animations
-  const header = document.querySelector("header");
-  const sections = document.querySelectorAll("section");
-
-  function checkScroll() {
-    // Header shadow
-    if (window.scrollY > 0) {
-      header.classList.add("shadow-md");
-    } else {
-      header.classList.remove("shadow-md");
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll("a");
+        mobileLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+                mobileMenu.classList.add("translate-x-full");
+                document.body.classList.remove("overflow-hidden");
+            });
+        });
     }
 
-    // Reveal animations for sections
-    sections.forEach((section) => {
-      const sectionTop = section.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
 
-      if (sectionTop < windowHeight * 0.85) {
-        section.classList.add("opacity-100", "translate-y-0");
-        section.classList.remove("opacity-0", "translate-y-4");
-      }
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                const headerHeight = document.querySelector("header").offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth",
+                });
+            }
+        });
     });
-  }
 
-  window.addEventListener("scroll", checkScroll);
-  // Run on page load
-  checkScroll();
+    // Form submission handling
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-  // Add intersection observer for animations
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.1,
-  };
+            // Get form values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("opacity-100", "translate-y-0");
-        entry.target.classList.remove("opacity-0", "translate-y-4");
-        // Stop observing once the animation is triggered
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+            // Here you would typically send the data to a server
+            // For demo purposs, we'll just log it and show a success message
+            console.log("Form Submitted:", { name, email, message });
 
-  // Terminal animation
-  const terminalContainer = document.getElementById("terminal-container");
-  const terminalContent = document.querySelector(".terminal-content");
-  const commandSpan = document.querySelector(".command-text");
+            // Show success message
+            const button = contactForm.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+            button.textContent = "Message Sent!";
 
-  if (terminalContainer && terminalContent && commandSpan) {
-    const commandText = "tovianh9b@gmail.com";
+            // Reset form
+            contactForm.reset();
 
-    let i = 0;
-    const typeCommand = () => {
-      if (i < commandText.length) {
-        commandSpan.textContent += commandText.charAt(i);
-        i++;
-        setTimeout(typeCommand, 50);
-      } else {
-        // Add blinking cursor after typing
-        const cursor = document.createElement("span");
-        cursor.className = "inline-block w-2 h-5 bg-gray-900 dark:bg-white ml-1 animate-blink align-middle";
-        terminalContent.appendChild(cursor);
-      }
+            // Restore button text after a delay
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 3000);
+        });
+    }
+
+    // Add scroll events for header shadow and reveal animations
+    const header = document.querySelector("header");
+    const sections = document.querySelectorAll("section");
+
+    function checkScroll() {
+        // Header shadow
+        if (window.scrollY > 0) {
+            header.classList.add("shadow-md");
+        } else {
+            header.classList.remove("shadow-md");
+        }
+
+        // Reveal animations for sections
+        sections.forEach((section) => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (sectionTop < windowHeight * 0.85) {
+                section.classList.add("opacity-100", "translate-y-0");
+                section.classList.remove("opacity-0", "translate-y-4");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkScroll);
+    // Run on page load
+    checkScroll();
+
+    // Add intersection observer for animations
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
     };
 
-    // Start typing after a delay
-    setTimeout(typeCommand, 1000);
-  } else {
-    // Fallback for original terminal structure
-    const terminal = document.querySelector(".terminal-body");
-    if (terminal) {
-      const commandText = terminal.querySelector(".command").textContent;
-      terminal.querySelector(".command").textContent = "";
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("opacity-100", "translate-y-0");
+                entry.target.classList.remove("opacity-0", "translate-y-4");
+                // Stop observing once the animation is triggered
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
-      let i = 0;
-      const typeCommand = () => {
-        if (i < commandText.length) {
-          terminal.querySelector(".command").textContent += commandText.charAt(i);
-          i++;
-          setTimeout(typeCommand, 50);
-        } else {
-          // Add blinking cursor after typing
-          terminal.querySelector(".command").insertAdjacentHTML("afterend", '<span class="animate-blink">_</span>');
+    // Terminal animation
+    const terminalContainer = document.getElementById("terminal-container");
+    const terminalContent = document.querySelector(".terminal-content");
+    const commandSpan = document.querySelector(".command-text");
+
+    if (terminalContainer && terminalContent && commandSpan) {
+        const commandText = "tovianh9b@gmail.com";
+
+        let i = 0;
+        const typeCommand = () => {
+            if (i < commandText.length) {
+                commandSpan.textContent += commandText.charAt(i);
+                i++;
+                setTimeout(typeCommand, 50);
+            } else {
+                // Add blinking cursor after typing
+                const cursor = document.createElement("span");
+                cursor.className = "inline-block w-2 h-5 bg-gray-900 dark:bg-white ml-1 animate-blink align-middle";
+                terminalContent.appendChild(cursor);
+            }
+        };
+
+        // Start typing after a delay
+        setTimeout(typeCommand, 1000);
+    } else {
+        // Fallback for original terminal structure
+        const terminal = document.querySelector(".terminal-body");
+        if (terminal) {
+            const commandText = terminal.querySelector(".command").textContent;
+            terminal.querySelector(".command").textContent = "";
+
+            let i = 0;
+            const typeCommand = () => {
+                if (i < commandText.length) {
+                    terminal.querySelector(".command").textContent += commandText.charAt(i);
+                    i++;
+                    setTimeout(typeCommand, 50);
+                } else {
+                    // Add blinking cursor after typing
+                    terminal.querySelector(".command").insertAdjacentHTML("afterend", '<span class="animate-blink">_</span>');
+                }
+            };
+
+            // Start typing after a delay
+            setTimeout(typeCommand, 1000);
         }
-      };
-
-      // Start typing after a delay
-      setTimeout(typeCommand, 1000);
     }
-  }
 });

@@ -1,0 +1,91 @@
+/* JOURNEY PAGE */
+.journey-header {
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    background: linear-gradient(to bottom, #f8f4ee, #f0e8d8);
+}
+
+.journey-title {
+    font-size: 6.5rem;
+    font-family: "Cormorant Garamond", serif;
+    color: var(--heading);
+}
+
+.journey-subtitle {
+    font-size: 2.8rem;
+    font-family: "Great Vibes", cursive;
+    color: var(--primary);
+    margin-top: 1rem;
+}
+
+/* TIMELINE */
+.timeline-section {
+    padding: 6rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 4rem;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 2rem;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--primary);
+    opacity: 0.2;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.year {
+    position: absolute;
+    left: -5.5rem;
+    background: var(--primary);
+    color: white;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.content {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-left: 2rem;
+}
+
+.quote-section {
+    padding: 8rem 2rem;
+    text-align: center;
+    font-style: italic;
+    font-size: 2.2rem;
+    color: #555;
+    background: #fff;
+}
+
+.author {
+    margin-top: 2rem;
+    font-family: "Great Vibes", cursive;
+    font-size: 3rem;
+    color: var(--primary);
+}

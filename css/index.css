@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: linear-gradient(135deg, #f7fbfc, #eef7f7, #f8fcff);
+
+    font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelope-container {
+    position: relative;
+
+    width: 450px;
+    height: 520px;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   THIỆP
+========================= */
+
+.card {
+    position: absolute;
+
+    left: 50%;
+    bottom: 140px;
+
+    transform: translateX(-50%);
+
+    width: 380px;
+    height: 310px;
+
+    background: linear-gradient(180deg, #efffff, #e6f8f7);
+
+    border-radius: 24px;
+
+    padding: 24px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.8s ease,
+        box-shadow 0.5s ease;
+
+    z-index: 1;
+}
+
+.card img {
+    width: 60px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.card h1 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 4rem;
+
+    color: #2f7f85;
+
+    margin-bottom: 10px;
+
+    line-height: 1;
+}
+
+.invite {
+    letter-spacing: 5px;
+
+    font-size: 1rem;
+
+    color: #53787a;
+
+    margin-top: 10px;
+}
+
+.card h2 {
+    font-size: 3rem;
+
+    color: #245d60;
+
+    letter-spacing: 4px;
+
+    margin-top: 20px;
+}
+
+.time {
+    margin-top: 20px;
+
+    font-size: 1.4rem;
+
+    color: #346f72;
+}
+
+.school {
+    margin-top: 10px;
+
+    font-size: 1.4rem;
+
+    font-weight: 600;
+
+    color: #245d60;
+}
+
+/* =========================
+   PHONG BÌ
+========================= */
+
+.envelope {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    width: 450px;
+    height: 280px;
+
+    text-decoration: none;
+
+    z-index: 10;
+}
+
+.envelope-back {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #82d6d4;
+
+    border-radius: 0 0 12px 12px;
+
+    z-index: 2;
+}
+
+.envelope-front {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #6ec8c6;
+
+    clip-path: polygon(0 0, 50% 58%, 100% 0, 100% 100%, 0 100%);
+
+    z-index: 4;
+}
+
+.envelope-flap {
+    position: absolute;
+
+    top: 0;
+
+    width: 100%;
+    height: 160px;
+
+    background: #67c4c1;
+
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+
+    transform-origin: top center;
+
+    transition: transform 0.8s ease;
+
+    z-index: 6;
+}
+
+.open-btn {
+    position: absolute;
+
+    left: 50%;
+    top: 58%;
+
+    transform: translate(-50%, -50%);
+
+    padding: 14px 36px;
+
+    border-radius: 999px;
+
+    background: #fff;
+
+    color: #2b7478;
+
+    font-weight: 600;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    z-index: 10;
+
+    transition: all 0.3s ease;
+}
+
+.envelope:hover .open-btn {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* =========================
+   HOVER DESKTOP
+========================= */
+
+.envelope-container {
+    perspective: 1200px; /* Tăng chiều sâu cho animation flap */
+}
+
+.envelope-container:hover .card {
+    transform: translateX(-50%) translateY(-160px) !important;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.28);
+    z-index: 15 !important; /* Rất quan trọng */
+}
+
+.envelope-container:hover .envelope-flap {
+    transform: rotateX(175deg) !important; /* Gần 180deg để mở hẳn */
+    z-index: 6;
+}
+
+/* Hover trực tiếp vào thiệp */
+.card-link:hover .card {
+    transform: translateX(-50%) translateY(-160px) !important;
+    z-index: 20 !important;
+}
+
+/* Ngăn chặn hover bị conflict giữa 2 thẻ <a> */
+.envelope,
+.card-link {
+    transition: all 0.4s ease;
+}
+
+/* Đảm bảo nút mở thiệp nổi lên */
+.envelope:hover .open-btn {
+    z-index: 25;
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* =========================
+   THIỆP 
+========================= */
+
+.card {
+    position: absolute;
+    left: 50%;
+    bottom: 140px;
+    transform: translateX(-50%);
+
+    width: 380px;
+    height: 255px; /* Mặc định ngắn */
+
+    background: linear-gradient(180deg, #efffff, #e6f8f7);
+    border-radius: 24px;
+    padding: 32px 24px 24px;
+    overflow: hidden;
+
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+/* HOVER DESKTOP - TĂNG CHIỀU CAO */
+.envelope-container:hover .card,
+.card-link:hover .card {
+    height: 445px; /* ← Tăng thêm để hiện hết dòng cuối */
+    transform: translateX(-50%) translateY(-145px) !important;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.28);
+    z-index: 20 !important;
+}
+/* =========================
+   MOBILE + TABLET (Không thay đổi nhiều)
+========================= */
+
+@media (max-width: 1024px) {
+    .envelope-container {
+        width: 100%;
+        max-width: 380px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: none !important;
+        height: auto !important; /* Hiện hết trên mobile */
+        overflow: visible;
+        margin-bottom: 30px;
+        padding: 30px 24px;
+    }
+
+    .envelope {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: none;
+        margin-top: 20px;
+    }
+
+    .envelope-back,
+    .envelope-front,
+    .envelope-flap {
+        display: none;
+    }
+
+    .open-btn {
+        position: static;
+        transform: none !important;
+        display: inline-flex;
+    }
+
+    /* Tắt hover trên mobile */
+    .envelope-container:hover .card,
+    .card-link:hover .card {
+        height: auto !important;
+        transform: none !important;
+    }
+}

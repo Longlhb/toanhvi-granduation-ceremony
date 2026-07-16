@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Album Ảnh - Tô Ánh Vi</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/main.css" />
+        <link rel="stylesheet" href="../css/gallery.css" />
+        <!-- CSS riêng -->
+    </head>
+    <body>
+        <!-- MUSIC -->
+        <audio id="bgMusic" loop>
+            <source src="../assets/music/music1.mp3" type="audio/mp3" />
+        </audio>
+        <button id="musicBtn" class="music-btn">🔊</button>
+
+        <!-- GALLERY HEADER -->
+        <section class="gallery-header">
+            <h1 class="gallery-title">Album Ảnh</h1>
+            <p class="gallery-subtitle">Những khoảnh khắc đẹp nhất của 4 năm đại học</p>
+        </section>
+
+        <!-- PHOTO GRID -->
+        <section class="gallery-grid">
+            <div class="gallery-item">
+                <img src="../assets/gallery/img1.png" alt="Ảnh 1" />
+            </div>
+            <div class="gallery-item">
+                <img src="../assets/gallery/img1.png" alt="Ảnh 2" />
+            </div>
+            <div class="gallery-item">
+                <img src="../assets/gallery/img1.png" alt="Ảnh 3" />
+            </div>
+            <div class="gallery-item">
+                <img src="../assets/gallery/img1.png" alt="Ảnh 4" />
+            </div>
+            <div class="gallery-item">
+                <img src="../assets/gallery/img1.png" alt="Ảnh 5" />
+            </div>
+            <div class="gallery-item">
+                <img src="../assets/gallery/img1.png" alt="Ảnh 6" />
+            </div>
+            <div class="gallery-item">
+                <img src="../assets/gallery/img1.png" alt="Ảnh 7" />
+            </div>
+            <div class="gallery-item">
+                <img src="../assets/gallery/img1.png" alt="Ảnh 8" />
+            </div>
+
+            <!-- Ô thứ 9: Nút Xem Thêm -->
+            <a href="https://drive.google.com/drive/folders/YOUR_DRIVE_LINK_HERE" target="_blank" class="gallery-item more-btn">
+                <div class="more-content">
+                    <span class="plus">+</span>
+                    <p>Xem thêm</p>
+                </div>
+            </a>
+        </section>
+
+        <!-- MENU -->
+        <section class="menu-section">
+            <a href="../pages/profolio.html">Bán mình cho tư bản rồi Huhu 😭😭</a>
+
+            <a href="../pages/gallery.html">Hình mình nè 🥰🥰</a>
+
+            <a href="../pages/memories.html">Mọi người với mình nè 😍😍</a>
+
+            <a href="../pages/thanks.html">Cảm ơn mọi người 😊😊</a>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+        <script src="../js/main.js"></script>
+    </body>
+</html>

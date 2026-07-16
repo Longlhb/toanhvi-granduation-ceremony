@@ -1,0 +1,275 @@
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --bg: #f8f4ee;
+    --primary: #c8a97e;
+    --heading: #2f2f2f;
+    --text: #666;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* MUSIC */
+
+.music-btn {
+    position: fixed;
+
+    top: 2rem;
+    right: 2rem;
+
+    z-index: 1000;
+
+    border: none;
+
+    width: 5rem;
+    height: 5rem;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: #fff;
+
+    cursor: pointer;
+}
+
+/* INVITATION */
+
+.invitation {
+    max-width: 90rem;
+
+    margin: 0 auto;
+
+    padding: 8rem 2rem;
+
+    text-align: center;
+}
+
+.invite-text {
+    font-size: 1.4rem;
+
+    letter-spacing: 0.4rem;
+
+    color: #555;
+}
+
+.invitation-title {
+    margin-top: 2rem;
+
+    font-size: 8rem;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-weight: 700;
+
+    color: var(--heading);
+}
+
+.student-name {
+    margin-top: 1rem;
+
+    font-size: 5rem;
+
+    color: var(--primary);
+
+    font-family: "Great Vibes", cursive;
+}
+
+.image-wrapper {
+    margin-top: 4rem;
+}
+
+.image-wrapper img {
+    width: 100%;
+
+    max-width: 24rem;
+
+    aspect-ratio: 3/4;
+
+    object-fit: cover;
+}
+
+.event-info {
+    margin-top: 4rem;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5rem;
+}
+
+.divider {
+    width: 0.1rem;
+
+    height: 10rem;
+
+    background: var(--primary);
+}
+
+.event-info h3 {
+    font-weight: 600;
+
+    margin-bottom: 1rem;
+}
+
+.open-btn {
+    margin-top: 5rem;
+
+    border: none;
+
+    background: var(--primary);
+
+    color: #fff;
+
+    padding: 1.5rem 4rem;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    font-size: 1.6rem;
+}
+
+/* LETTER */
+
+.letter-section {
+    padding: 10rem 2rem;
+
+    background: #fff;
+}
+
+.letter-container {
+    max-width: 70rem;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.letter-container h2 {
+    font-size: 5rem;
+
+    font-family: "Cormorant Garamond", serif;
+
+    color: var(--heading);
+}
+
+.letter-container p {
+    margin-top: 2rem;
+
+    line-height: 1.8;
+}
+
+.letter-container h3 {
+    margin-top: 4rem;
+
+    font-size: 4rem;
+
+    color: var(--primary);
+
+    font-family: "Great Vibes", cursive;
+}
+
+/* COUNTDOWN */
+
+.countdown-section {
+    padding: 10rem 2rem;
+
+    text-align: center;
+}
+
+.countdown {
+    margin-top: 4rem;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 2rem;
+
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    width: 14rem;
+
+    background: #fff;
+
+    padding: 2rem;
+
+    border-radius: 1.6rem;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.countdown-item span {
+    display: block;
+
+    font-size: 4rem;
+
+    color: var(--primary);
+
+    font-weight: 700;
+}
+
+/* MAP */
+
+.map-section {
+    padding: 10rem 2rem;
+
+    text-align: center;
+}
+
+.map-section iframe {
+    width: 100%;
+
+    max-width: 100rem;
+
+    height: 50rem;
+
+    border: none;
+
+    border-radius: 2rem;
+
+    margin-top: 3rem;
+}
+
+/* MENU */
+
+.menu-section {
+    padding: 10rem 2rem;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 2rem;
+
+    flex-wrap: wrap;
+}
+
+.menu-section a {
+    text-decoration: none;
+
+    background: var(--primary);
+
+    color: #fff;
+
+    padding: 1.5rem 3rem;
+
+    border-radius: 999px;
+}
+
+.menu-section a:hover {
+    transform: translateY(-3px);
+}

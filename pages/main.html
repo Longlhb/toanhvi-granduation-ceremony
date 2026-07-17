@@ -14,6 +14,8 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
         <link rel="stylesheet" href="../css/reset.css" />
 
         <link rel="stylesheet" href="../css/main.css" />
@@ -181,31 +183,35 @@
         </section>
 
         <section class="guestbook">
-            <h2>Lời Chúc Từ Bạn Bè</h2>
+            <h2 class="guestbook-title">💌 Sổ Lưu Bút</h2>
 
-            <form id="wishForm">
-                <input type="text" id="name" placeholder="Nhập tên của bạn" required />
+            <div class="guestbook-form">
+                <input type="text" id="nameInput" placeholder="Tên của bạn" maxlength="30" />
 
-                <textarea id="message" placeholder="Nhập lời chúc..." rows="5" required></textarea>
+                <textarea id="messageInput" placeholder="Gửi lời chúc đến Ánh Vi..." maxlength="300"></textarea>
 
-                <button type="submit">Gửi Lời Chúc</button>
-            </form>
+                <button id="submitBtn">Gửi Lời Chúc</button>
+            </div>
 
-            <div id="wishList"></div>
+            <div id="wishesContainer" class="wishes-container"></div>
         </section>
 
         <!-- MENU -->
 
+        <p class="menu-text">Nhấn vào để xem tiếp nhé</p>
+
+        <p class="menu-text" style="font-size: 3rem">👇👇</p>
+
         <section class="menu-section">
-            <a href="../pages/main.html">Hi mọi người 🤗🤗</a>
+            <a href="../pages/main.html">Hi mọi người 🤗</a>
 
-            <a href="../pages/profolio.html">Bán mình cho tư bản rồi Huhu 😭😭</a>
+            <a href="../pages/profolio.html">Bán mình cho tư bản rồi Huhu 😭</a>
 
-            <a href="../pages/gallery.html">Mọi người xem hình mình hông 🥰🥰</a>
+            <a href="../pages/gallery.html">Mọi người xem hình mình hông 🥰</a>
 
-            <a href="../pages/memories.html">Mọi người với mình nè 😍😍</a>
+            <a href="../pages/memories.html">Mọi người với mình nè 😍</a>
 
-            <a href="../pages/thanks.html">Cảm ơn mọi người 😊😊</a>
+            <a href="../pages/thanks.html">Cảm ơn mọi người 😊</a>
         </section>
 
         <!-- FOOTER -->
@@ -244,6 +250,8 @@
 
             <img id="lightboxImg" src="" alt="Preview" />
         </div> -->
+
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 

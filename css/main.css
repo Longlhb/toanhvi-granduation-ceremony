@@ -642,40 +642,11 @@ body {
     padding-right: 1rem;
 }
 
-/* #wishesContainer::-webkit-scrollbar {
-    width: 5px;
-}
-
-#wishesContainer::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-#wishesContainer::-webkit-scrollbar-thumb {
-    background: #7ed6d4;
-    border-radius: 999px;
-}
-
-#wishesContainer::-webkit-scrollbar-thumb:hover {
-    background: #5fc8c3;
-} */
 
 #wishesContainer {
     scrollbar-width: thin;
     scrollbar-color: #7ed6d4 transparent;
 }
-
-/* #wishesContainer::-webkit-scrollbar {
-    width: 3px;
-}
-
-#wishesContainer::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-#wishesContainer::-webkit-scrollbar-thumb {
-    background: rgba(126, 214, 212, 0.8);
-    border-radius: 999px;
-} */
 
 .wish-avatar {
     width: 60px;

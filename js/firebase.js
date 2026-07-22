@@ -60,9 +60,9 @@ onSnapshot(q, (snapshot) => {
     snapshot.forEach((doc) => {
         const data = doc.data();
 
-        let timeText = "";
+        let timeText = "Vừa xong";
 
-        if (data.createdAt) {
+        if (data.createdAt?.toDate) {
             timeText = data.createdAt.toDate().toLocaleString("vi-VN");
         }
 
